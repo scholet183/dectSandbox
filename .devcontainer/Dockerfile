@@ -22,5 +22,5 @@ RUN apt-get update -y && \
 
 RUN git clone https://github.com/joan2937/pigpio.git /opt/pigpio && \
     cd /opt/pigpio && \
-    make && \
+    make CROSS_PREFIX=aarch64-linux-gnu- && \
     make install
