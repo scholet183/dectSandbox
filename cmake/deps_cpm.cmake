@@ -11,9 +11,3 @@ CPMAddPackage(
     "CATCH_BUILD_EXTRA_TESTS OFF"
     "CATCH_BUILD_FUZZERS OFF"
 )
-
-CPMAddPackage(
-    NAME pigpio
-    GITHUB_REPOSITORY "joan2937/pigpio"
-    GIT_TAG master
-)

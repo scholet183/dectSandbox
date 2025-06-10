@@ -159,6 +159,36 @@
       }
     },
     {
+      "name": "unixlike-gcc-crosscompile-debug",
+      "displayName": "gcc Debug(crosscompile)",
+      "description": "Target Unix-like OS with the gcc compiler, debug build type",
+      "inherits": "conf-unixlike-common",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": {
+          "type": "PATH",
+          "value": "~/opt/x-tools/aarch64-rpi3-linux-gnu/aarch64-rpi4-linux-gnu.toolchain.cmake"
+        },
+        "CMAKE_EXE_LINKER_FLAGS": "-static-libgcc -static-libstdc++ -static",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "container-build-debug",
+      "displayName": "container aarch64-linux-gnu pi Debug(crosscompile)",
+      "description": "tbd",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_COMPILER": "aarch64-linux-gnu-g++-14",
+        "CMAKE_EXE_LINKER_FLAGS": "-static-libgcc -static-libstdc++ -static"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
       "name": "unixlike-gcc-release",
       "displayName": "gcc Release",
       "description": "Target Unix-like OS with the gcc compiler, release build type",

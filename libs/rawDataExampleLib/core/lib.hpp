@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+//#include <pigpio.h>
 #include <string>
 extern "C"
 {
@@ -37,7 +38,7 @@ struct Button
 };
 
 // Handle button state change
-static ButtonMovement p_HandleButton(Button* pst_Button, bool CurrentState);
+//static ButtonMovement p_HandleButton(Button* pst_Button, bool CurrentState);
 
 // Send raw FUN message with up to 128 bytes to remote
 static bool ExampleSendRawFunMessage(u16 g_DeviceId, u8* pu8_Data, u16 u16_DataSize);

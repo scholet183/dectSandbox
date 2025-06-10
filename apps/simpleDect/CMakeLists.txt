@@ -12,11 +12,14 @@ target_link_libraries(${PROJECT_NAME}
     PUBLIC
 	sampleLib::sampleLib
 	CmndLib::CmndLib
+	rawDataExampleLib::rawDataExampleLib
+	-L/opt/pigpio -lpigpio -lrt -lpthread
 )
 target_include_directories(${PROJECT_NAME}
 	PRIVATE
 		$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 		$<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+		/opt/pigpio
 )
 
 enable_coverage(${PROJECT_NAME})

@@ -11,7 +11,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "TypeDefs.h"
-#include "CmndLib_Config.h"
+#include <CmndLib_Config.h>
 
 typedef u16 t_hanCmndServiceId;         // Service ID is 16bit
 typedef u8  t_hanCmndMsgId;             // Message ID is 8bit

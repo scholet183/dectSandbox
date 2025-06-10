@@ -1,0 +1,31 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "cppgdb",
+      "name": "simpleDect (Remote Debug)",
+      "project": "CMakeLists.txt",
+      "projectTarget": "simpleDect",
+      "debuggerConfiguration": "gdbserver",
+      "comment": "Deploy and debug on Pi, add to Connection Manager and specify remoteMachineName, set to Pi3 or Pi3 Debug configuration",
+      //"remoteMachineName": "192.168.0.29",
+      "remoteMachineName": "10.0.0.69",
+      "gdbPath": "C:\\tools\\gdb-11.2\\gdb-multiarch.exe",
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\tools\\gdb-11.2\\gdb-multiarch.exe",
+      "setupCommands": [
+        {
+          "text": "set sysroot ."
+        },
+        {
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "args": [],
+      "env": {}
+
+    }
+  ]
+}

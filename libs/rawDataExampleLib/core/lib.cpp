@@ -97,37 +97,39 @@ bool ExampleSendRawFunMessage(u16 u16_DeviceId, u8* pu8_Data, u16 u16_DataSize)
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-
+//
+// Button press not needed 
+// 
 // A helper function to detect that button is pressed
-t_en_ButtonMovement p_HandleButton(t_st_Button* pst_Button, bool CurrentState)
-{
-    t_en_ButtonMovement en_ButtonMovement = BUTTON_NOCHANGE;
-    u64                 u64_CurrentTicks = (u64)HAL_GetTick(); // p_CmndLib_UserImpl_GetTickCountMs();
-
-    // If state has changed
-    if (CurrentState != pst_Button->b_Pressed)
-    {
-        if (!pst_Button->b_Pressed && CurrentState)
-        {
-            // Save event timestamp
-            pst_Button->u64_StartTicks = u64_CurrentTicks;
-            pst_Button->en_State = BUTTON_PENDING;
-        }
-        else if (pst_Button->b_Pressed && !CurrentState)
-        {
-            if (pst_Button->en_State == BUTTON_PENDING)
-            {
-                if ((u64_CurrentTicks - pst_Button->u64_StartTicks) > BUTTON_ACTIVE_TIME)
-                {
-                    en_ButtonMovement = BUTTON_PRESSED;
-                    pst_Button->en_State = BUTTON_INITIAL;
-                }
-            }
-        }
-        pst_Button->b_Pressed = CurrentState; // Save new state
-    }
-    return en_ButtonMovement;
-}
+//ButtonMovement p_HandleButton(t_st_Button* pst_Button, bool CurrentState)
+//{
+//    t_en_ButtonMovement en_ButtonMovement = BUTTON_NOCHANGE;
+//    u64                 u64_CurrentTicks = (u64)HAL_GetTick(); // p_CmndLib_UserImpl_GetTickCountMs();
+//
+//    // If state has changed
+//    if (CurrentState != pst_Button->b_Pressed)
+//    {
+//        if (!pst_Button->b_Pressed && CurrentState)
+//        {
+//            // Save event timestamp
+//            pst_Button->u64_StartTicks = u64_CurrentTicks;
+//            pst_Button->en_State = BUTTON_PENDING;
+//        }
+//        else if (pst_Button->b_Pressed && !CurrentState)
+//        {
+//            if (pst_Button->en_State == BUTTON_PENDING)
+//            {
+//                if ((u64_CurrentTicks - pst_Button->u64_StartTicks) > BUTTON_ACTIVE_TIME)
+//                {
+//                    en_ButtonMovement = BUTTON_PRESSED;
+//                    pst_Button->en_State = BUTTON_INITIAL;
+//                }
+//            }
+//        }
+//        pst_Button->b_Pressed = CurrentState; // Save new state
+//    }
+//    return en_ButtonMovement;
+//}
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
