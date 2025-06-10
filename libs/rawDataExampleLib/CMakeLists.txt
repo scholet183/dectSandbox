@@ -13,9 +13,11 @@ target_sources(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
-    pigpio::pigpio
     PRIVATE
     CmndLib
+    pigpio::pigpio
+    rt
+    pthread
 )
 
 target_include_directories(
