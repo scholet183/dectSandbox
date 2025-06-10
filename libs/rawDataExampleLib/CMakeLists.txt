@@ -15,7 +15,8 @@ target_link_libraries(${PROJECT_NAME}
     PUBLIC
     PRIVATE
     CmndLib
-    pigpio::pigpio
+    # pigpio findet kein pigpio.h
+    # pigpio::pigpio findet keine library
     rt
     pthread
 )
