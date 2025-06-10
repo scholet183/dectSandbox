@@ -3,7 +3,7 @@
 #include <chrono>
 #include <thread>
 #include <print>
-#include "pigpio.h"
+#include <pigpio/pigpio.h>
 
 namespace pins {
 static constexpr auto RST_N_PIN = 0;
